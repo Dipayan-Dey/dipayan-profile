@@ -1,0 +1,160 @@
+.res-navber {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);  
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+.show{
+  transform: translateY(0%);
+}
+
+.res-navber img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.res-navber ul a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.res-navber ul li {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.res-navber .right {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 850px) {
+  .navber .right button {
+    display: none;
+  }
+  .navber ul {
+    display: none;
+  }
+  .navber .right img {
+    display: block;
+  }
+  .hero{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  .hero .left{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+ .hero .right{
+  display: none;
+  
+ }
+ .hero .left .name{
+  font-size: 70px;
+ }
+
+ .about .card-wrapper{
+  flex-direction: column;
+ }
+ .about .heading .content .bottom{
+  font-size: 30px;
+  width: 100%;
+ }
+ .about .card-wrapper .card{
+  width: 80%;
+ }
+ .main-skill{
+  flex-direction: column;
+ }
+ .main-skill .right{
+  width: 100%;
+ }
+ .main-skill .left{
+  width: 100%;
+
+ }
+ .main-skill .right .skill-detail h3{
+  font-size: 30px;
+ }
+ .main-skill .right .skill-detail p{
+  font-size: 18px;
+ }
+ .about .read-more-card  {
+  width: 80%;
+  height: 40%;
+ }
+ .about .card-1{
+  /* margin-top: 1%; */
+  top: 0;
+ }
+ .about .card-2{
+  margin-top: 70%;
+ }
+ .project .card-wrapper{
+  flex-direction: column;
+  flex-wrap: nowrap;
+ }
+ .project .card-wrapper .card{
+  width: 70%;
+  margin-top: 20px;
+  
+ }
+ .contact .heading  h3{
+  font-size: 30px;
+  padding: 20px;
+ }
+ .project .card-wrapper  .card .bottom .btn-container a{
+  font-size: 15px;
+ }
+}
+@media only screen and (max-width: 500px){
+  .hero{
+    height: 100vh;
+  }
+  .hero .left .name{
+    font-size: 50px;
+  }
+  .hero .left .subtxt{
+    font-size: 40px;
+  }
+  .project .card-wrapper .card{
+    width: 80%;
+  }
+} 
+@media only screen and (max-width: 1000px){
+  .hero{
+    /* height: 150vh; */
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+ .hero .left{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ }
+ 
+ .hero .right{
+  display: none;
+ 
+ }
+}
