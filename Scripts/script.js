@@ -1,4 +1,23 @@
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault(); // Prevent right-click
+  // alert("Right Click Not Allowed");
+});
 
+document.onselectstart = (e) => {
+  e.preventDefault(); // Prevent text selection
+};
+
+document.addEventListener("keydown", (e) => {
+  // Prevent specific shortcuts like Ctrl+U and Ctrl+Shift+I
+  if (
+    (e.key.toLowerCase() === "u" && e.ctrlKey) || // Ctrl+U
+    (e.key.toLowerCase() === "i" && e.ctrlKey && e.shiftKey)  || // Ctrl+Shift+I
+    e.key === "F12" 
+  ) {
+    e.preventDefault();
+    // alert("Shortcut Not Allowed");
+  }
+});
 
 //navber open start
 const showMenu = document.getElementById("show-menu");
