@@ -1,3 +1,10 @@
+window.onload = function () {
+  if (!sessionStorage.getItem('refreshed')) {
+    sessionStorage.setItem('refreshed', 'true');
+    location.reload();
+  }
+};
+
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault(); // Prevent right-click
   // alert("Right Click Not Allowed");
