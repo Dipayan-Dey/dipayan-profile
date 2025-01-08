@@ -605,45 +605,40 @@
             </div>
           </div> -->
         </div>
-        <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
-          <div class="contact-form">
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Name"
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="E-mail"
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Mobile No."
-              />
-            </div>
-            <div class="mb-3">
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                placeholder="Message"
-                rows="5" style="resize: none;"
-              ></textarea>
-            </div>
-            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-              Submit
-            </button>
-          </div>
+<div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
+         <div class="contact-form">
+
+            <form action="" method="post" id="form">
+               
+              <input name="name"
+              type="text"
+              class="form-control mb-3"
+              id="exampleFormControlInput1"
+              placeholder="Name"
+            />
+            <input
+            type="email"
+            class="form-control mb-3"
+            id="exampleFormControlInput1"
+            placeholder="E-mail"
+          />
+            <input name="number"
+            type="number"
+            class="form-control mb-3"
+            id="exampleFormControlInput1"
+            placeholder="Mobile No."
+          />
+          <textarea name="msg"
+          class="form-control mb-3"
+          id="exampleFormControlTextarea1"
+          placeholder="Message"
+          rows="5" style="resize: none;"
+        ></textarea>
+                <button class="btn" name="btn">Submit</button>
+            </form>
         </div>
+        </div>
+
       </div>
     </section>
     <!-- contact section ends here -->
@@ -705,6 +700,37 @@
           type: 1
       })
   </script>
+
+
+     <script>
+        let url = 'https://script.google.com/macros/s/AKfycbzz7CacYO8UUHiJ5Do1SpZghdX70JHGqEuaSgNi2bsD5FgGGeDTkTdG7qUIfU6xoEGs/exec'; // Replace with the Web App URL
+       let form = document.getElementById('form');
+
+       form.addEventListener("submit", (e) => {
+          // alert()
+          e.preventDefault(); // Prevent the default form submission
+          e.target.btn.innerHTML = "Submitting..."; // Update button text
+          let data = new FormData(form);
+          
+
+          // Send form data to the Web App
+          fetch(url, {
+              method: "POST",
+              body: data
+          })
+          .then((res) => res.text())
+          .then((response) => {
+              alert(response); // Show success message
+              form.reset(); // Reset the form
+              e.target.btn.innerHTML = "Submit"; // Reset button text
+          })
+          .catch((error) => {
+              alert("Error: " + error.message); // Show error message
+              e.target.btn.innerHTML = "Submit"; // Reset button text
+          });
+       });
+  </script>
+
   
   </body>
 </html>
